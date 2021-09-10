@@ -76,3 +76,144 @@ let calculator = function(){
 }
 
   calculator();
+
+2. Lightblum
+
+let light = function () {
+ 
+    this.getInfo = function () 
+    {
+        if (window.confirm('Включить лампочку?'))
+        {
+            alert('Лампочка включена');
+            this.time = +prompt('Введите время работы лампочки');
+        } 
+        else 
+        {
+            this.time = 0;
+            alert('Лампочка выключена');
+            throw new Error('Лампочка выключена');
+        }
+        this.power = prompt('Введите мощность');
+        this.cost = prompt('Введите стоимость');
+    }
+
+    getInfo();
+ 
+    this.price = function () 
+    {
+        this.result = Number((this.power / 1000) * this.cost * this.time);
+
+        alert('Общая сумма - ' + this.result);
+    }
+
+    price();
+ 
+    this.total = function () 
+    {
+        if (this.time === 0)
+        {
+            alert('Лампочка не включена');
+        }
+
+        else 
+        {
+            alert('Лампочка проработала - ' + this.time);
+        }
+    }
+
+    total();
+};
+
+light();
+
+3. Kettle
+
+let kettle = function () {
+ 
+    this.getInfo = function () 
+    {
+        if (window.confirm('Включить чайник?'))
+        {
+            alert('Чайник закипает');
+        } 
+        else 
+        {
+            alert('Чайник отключен');
+            throw new Error(alert('Чайник выключен'));
+        }
+        this.power = prompt('Введите мощность');
+        this.volume = prompt('Введите объем');
+        this.water = prompt('Кол-во воды');
+    }
+    getInfo();
+
+    this.time = function () 
+    {
+        if (this.volume >= this.water)
+        {
+        this.result = (Number(this.water) * 4200 * 80) / (Number(this.power) * 0,6);
+
+        alert('Время кипения - ' + this.result);
+        }
+        else alert('Объем воды превышает допустимый')
+    }
+
+    time();
+}
+
+kettle();
+
+4. Auto
+
+let auto = function () {
+ 
+    this.getInfo = function () 
+    {
+        this.serie = prompt('Введите марку');
+        this.numberAuto = prompt('Введите номер');
+    }
+    getInfo();
+
+    this.about = function()
+    {
+        alert('Марка машины - ' + this.serie + ' ' + 'Номер авто: ' + this.numberAuto);
+    }
+
+    about();
+
+    this.power = function()
+    {
+        if (window.confirm('Включить двигатель?'))
+        {
+            alert('Машина заведена');
+        } 
+        else 
+        {
+            throw new Error(alert('Двигатель выключен'));
+        }
+    }
+
+    power();
+
+    this.road = function () 
+    {
+        this.transmission = prompt('Выберите передачу: 1. Вперед, 2. Назад, 3. Нейтральная');
+
+        this.speed = prompt('Скорость машины');
+
+        this.time = prompt('Время поездки в часах');
+
+        switch(transmission)
+        {
+            case '1': alert('Пройдено киллометров - ' + (this.result = this.speed * this.time)); break;
+            case '2': alert('Пройдено киллометров - ' + (this.result = this.speed / this.time)); break;
+            case '3': alert('Пройдено киллометров - ' + '0'); break;
+        }
+    }
+
+
+    road();
+}
+
+auto();
