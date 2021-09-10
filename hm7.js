@@ -219,18 +219,3 @@ let auto = function () {
 auto();
 
 5.User
-
-let addUser = function (name, secondname, thirdname, age, contact, email) {
-    alert(name + ' ' + secondname + ' '+ thirdname + ' ' + age + ' ' + contact + ' ' + email)
-}
-
-let user = addUser(
-    name = prompt('Введите имя'),
-    secondname = prompt('Введите фамилию'),
-    thirdname = prompt('Введите отчество'),
-    age = prompt('Введите возраст'),
-    contact = prompt('Введите номер телефона'),
-    email = prompt('Введите почту'))
-
-
-  addUser();
